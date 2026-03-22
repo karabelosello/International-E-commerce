@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalog – LUXE GLOBAL</title>
+  <link rel="stylesheet" href="style.css" />
+ 
+</head>
+<body>
+
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h3>🛒 Your Cart</h3>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Your cart is empty.<br>Add items from the catalog.</p>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total"><span>Total</span><span id="cartTotal">R0</span></div>
+    <button class="checkout-btn" onclick="alert('Proceeding to checkout!')">Proceed to Checkout</button>
+  </div>
+</div>
+
+<nav>
+  <a class="logo" href="index.html">LUXE GLOBAL</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="catalog.html" class="active">Catalog</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="shipping.html">Shipping</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="cart-btn" onclick="openCart()"> Cart <span class="cart-count" id="cartCount">0</span></button>
+</nav>
+
+<div class="page-header">
+  <h1>Product Catalog</h1>
+</div>
+
+<div class="section">
+  <h2>All Products</h2>
+  <p class="sub">Showing 12 of 999 products</p>
+  <div class="product-grid-3">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&q=80" alt="Silk Dress" />
+      <div class="card-body">
+        <p class="brand">Milano Atelier · Italy 🇮🇹 &nbsp;<span class="badge">New</span></p>
+        <h4>Silk Evening Dress</h4>
+        <div class="card-bottom"><span class="price">R489</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Silk Evening Dress','R489',489,'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80" alt="Leather Tote" />
+      <div class="card-body">
+        <p class="brand">Paris Maison · France 🇫🇷</p>
+        <h4>Structured Leather Tote</h4>
+        <div class="card-bottom"><span class="price">R855</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Structured Leather Tote','R855',855,'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=600&q=80" alt="Wool Blazer" />
+      <div class="card-body">
+        <p class="brand">London Tailors · UK 🇬🇧 &nbsp;<span class="badge">Bestseller</span></p>
+        <h4>Merino Wool Blazer</h4>
+        <div class="card-bottom"><span class="price">R620</span> <span class="old-price">R780</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Merino Wool Blazer','R620',620,'https://images.unsplash.com/photo-1617137968427-85924c800a22?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80" alt="Sneakers" />
+      <div class="card-body">
+        <p class="brand">Tokyo Street · Japan 🇯🇵 &nbsp;<span class="badge badge-sale">-20%</span></p>
+        <h4>Premium Leather Sneakers</h4>
+        <div class="card-bottom"><span class="price">R312</span> <span class="old-price">R390</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Premium Leather Sneakers','R312',312,'https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" alt="Watch" />
+      <div class="card-body">
+        <p class="brand">Geneva Horology · Switzerland 🇨🇭</p>
+        <h4>Classic Automatic Watch</h4>
+        <div class="card-bottom"><span class="price">R2,450</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Classic Automatic Watch','R2,450',2450,'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&q=80" alt="Oxford Shoes" />
+      <div class="card-body">
+        <p class="brand">Madrid Cordwain · Spain 🇪🇸 &nbsp;<span class="badge badge-sale">-15%</span></p>
+        <h4>Handmade Leather Oxfords</h4>
+        <div class="card-bottom"><span class="price">R378</span> <span class="old-price">R445</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Handmade Leather Oxfords','R378',378,'https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80" alt="Perfume" />
+      <div class="card-body">
+        <p class="brand">Grasse Parfums · France 🇫🇷 &nbsp;<span class="badge">New</span></p>
+        <h4>Signature Eau de Parfum</h4>
+        <div class="card-bottom"><span class="price">R320</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Signature Eau de Parfum','R320',320,'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=600&q=80" alt="Sunglasses" />
+      <div class="card-body">
+        <p class="brand">Roma Eyewear · Italy 🇮🇹</p>
+        <h4>Oversized Cat-Eye Sunglasses</h4>
+        <div class="card-bottom"><span class="price">R298</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Oversized Cat-Eye Sunglasses','R298',298,'https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600&q=80" alt="Silk Scarf" />
+      <div class="card-body">
+        <p class="brand">Paris Maison · France 🇫🇷 &nbsp;<span class="badge badge-sale">-15%</span></p>
+        <h4>Hand-Painted Silk Scarf</h4>
+        <div class="card-bottom"><span class="price">R195</span> <span class="old-price">R230</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Hand-Painted Silk Scarf','R195',195,'https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80" alt="Denim Jacket" />
+      <div class="card-body">
+        <p class="brand">Berlin Haus · Germany 🇩🇪 &nbsp;<span class="badge">New</span></p>
+        <h4>Raw Denim Jacket</h4>
+        <div class="card-bottom"><span class="price">R540</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Raw Denim Jacket','R540',540,'https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80" alt="Yoga Set" />
+      <div class="card-body">
+        <p class="brand">Seoul Active · Korea 🇰🇷 &nbsp;<span class="badge badge-sale">-10%</span></p>
+        <h4>Premium Yoga Set</h4>
+        <div class="card-bottom"><span class="price">R270</span> <span class="old-price">R300</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Premium Yoga Set','R270',270,'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1608667508764-33cf0726b13a?w=600&q=80" alt="Wool Hat" />
+      <div class="card-body">
+        <p class="brand">Dublin Knitwear · Ireland 🇮🇪 &nbsp;<span class="badge">New</span></p>
+        <h4>Merino Wool Beanie</h4>
+        <div class="card-bottom"><span class="price">R185</span></div>
+        <button class="add-to-cart" onclick="addToCart(this,'Merino Wool Beanie','R185',185,'https://images.unsplash.com/photo-1608667508764-33cf0726b13a?w=600&q=80')">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section section-alt">
+  <h2>The Art of Luxury Fashion</h2>
+  <p class="sub">A look behind the craftsmanship of the world's finest brands</p>
+  <div class="video-card">
+    <div class="video-card-body">
+      <video width="100%" height="400" controls>
+        <source src="video/Promotional Video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<script>
+  let cart = [];
+
+  function addToCart(btn, name, priceLabel, priceNum, img) {
+    const existing = cart.find(i => i.name === name);
+    if (existing) { existing.qty++; }
+    else { cart.push({ name, priceLabel, priceNum, img, qty: 1 }); }
+    btn.textContent = '✓ Added';
+    btn.classList.add('added');
+    setTimeout(() => { btn.textContent = 'Add to Cart'; btn.classList.remove('added'); }, 1500);
+    updateCart();
+    openCart();
+  }
+
+  function updateCart() {
+    const count = cart.reduce((s, i) => s + i.qty, 0);
+    const total = cart.reduce((s, i) => s + i.priceNum * i.qty, 0);
+    document.getElementById('cartCount').textContent = count;
+    document.getElementById('cartTotal').textContent = 'R' + total.toLocaleString();
+    const itemsEl = document.getElementById('cartItems');
+    const footerEl = document.getElementById('cartFooter');
+    if (cart.length === 0) {
+      itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty.<br>Add items from the catalog.</p>';
+      footerEl.style.display = 'none';
+    } else {
+      footerEl.style.display = 'block';
+      itemsEl.innerHTML = cart.map((item, idx) => `
+        <div class="cart-item">
+          <img src="${item.img}" alt="${item.name}" />
+          <div>
+            <p class="cart-item-name">${item.name}</p>
+            <p class="cart-item-price">${item.priceLabel}</p>
+            <div class="cart-item-qty">
+              <button class="qty-btn" onclick="changeQty(${idx},-1)">−</button>
+              <span class="qty-num">${item.qty}</span>
+              <button class="qty-btn" onclick="changeQty(${idx},1)">+</button>
+            </div>
+          </div>
+          <button class="remove-btn" onclick="removeItem(${idx})">✕</button>
+        </div>
+      `).join('');
+    }
+  }
+
+  function changeQty(idx, delta) {
+    cart[idx].qty += delta;
+    if (cart[idx].qty <= 0) cart.splice(idx, 1);
+    updateCart();
+  }
+
+  function removeItem(idx) { cart.splice(idx, 1); updateCart(); }
+  function openCart() { document.getElementById('cartPanel').classList.add('open'); document.getElementById('cartOverlay').classList.add('open'); }
+  function closeCart() { document.getElementById('cartPanel').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
+</script>
+</body>
+</html>
